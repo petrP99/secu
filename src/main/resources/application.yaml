@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: security
+  r2dbc:
+    url: r2dbc:postgresql://localhost:8080/postgres
+    username: admin
+    password: admin
+  flyway:
+    url: jdbc:postgresql://localhost:8080/postgres
+    locations: classpath:db/migration
+
+server:
+  port: 8081
+
+jwt:
+  password:
+    encoder:
+      secret: ANYTHINGSTRING
+      iteration: 64
+      keyLength: 256
